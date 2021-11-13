@@ -7,7 +7,7 @@ import Show from "../pages/Show";
 const Main = (props) => {
   
   const [cheese, setCheese] = useState(null)
-  const URL = "https://mlaude-cheese-backend.herokuapp.com/cheese"
+  const URL = "https://mlaude-cheese-backend.herokuapp.com/cheese/"
   
   const getCheese = async() => {
     const response = await fetch(URL)
@@ -15,24 +15,24 @@ const Main = (props) => {
     setCheese(data)
   }
 
-  const createCheese = async(cheese) => {
+  const createCheese = async(oneCheese) => {
     await fetch(URL, {
       method: "post",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(cheese),
+      body: JSON.stringify(oneCheese),
     });
     getCheese();
   };
 
-  const updateCheese = async (cheese, id) => {
+  const updateCheese = async (oneCheese, id) => {
     await fetch(URL + id, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cheese)
+      body: JSON.stringify(oneCheese)
     });
     getCheese();
   };
