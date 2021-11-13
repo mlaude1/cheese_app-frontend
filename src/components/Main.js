@@ -45,7 +45,9 @@ const Main = (props) => {
     getCheese();
   };
 
-  useEffect(() => getCheese(), [])
+  useEffect(() => {
+    getCheese()
+  }, [])
 
   return (
     <main>
