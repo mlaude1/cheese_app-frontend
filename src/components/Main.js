@@ -26,13 +26,40 @@ const Main = (props) => {
     getCheese();
   };
 
+  const updateCheese = async (cheese, id) => {
+    await fetch(URL + id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cheese)
+    });
+    getCheese();
+  };
+
+  const deleteCheese = async (id) => {
+    await fetch(URL + id, {
+      method: "delete",
+    });
+    getCheese();
+  };
+
   useEffect(() => getCheese(), [])
 
   return (
-    <Routes>
-      <Route path="/" element={<Index cheese={cheese} createCheese={createCheese}/>}/>
-      <Route path="/cheese/:id" element={<Show/>}/>
-    </Routes>
+    <main>
+      <Routes>
+        <Route path="/" element={
+          <Index cheese={cheese} 
+          createCheese={createCheese}/>
+        }/>
+        <Route path="/cheese/:id" element={
+          <Show cheese={cheese}
+          updateCheese={updateCheese}
+          deleteCheese={deleteCheese}/>
+        }/>
+      </Routes>
+    </main>
   )
 }
 
