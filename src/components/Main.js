@@ -7,6 +7,7 @@ import Show from "../pages/Show";
 const Main = (props) => {
   
   const [cheese, setCheese] = useState(null)
+  // ⭐️⭐️ do not forget the "/" at the end of your heroku link!!
   const URL = "https://mlaude-cheese-backend.herokuapp.com/cheese/"
   
   const getCheese = async() => {

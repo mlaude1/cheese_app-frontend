@@ -48,16 +48,16 @@ const Show = (props) => {
           />
           <input
             type="text"
-            value={editForm.image}
-            name="image"
-            placeholder="Image URL"
+            value={editForm.countryOfOrigin}
+            name="countryOfOrigin"
+            placeholder="Country of Origin"
             onChange={handleChange}
           />
           <input
             type="text"
-            value={editForm.countryOfOrigin}
-            name="countryOfOrigin"
-            placeholder="Country of Origin"
+            value={editForm.image}
+            name="image"
+            placeholder="Image URL"
             onChange={handleChange}
           />
           <input type="submit" value="Update" />
