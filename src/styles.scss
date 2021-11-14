@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+// =========================
+// Variables
+// =========================
+$maincolor: black;
+$contrastcolor: white;
+
+// =========================
+// Mixins
+// =========================
+@mixin white-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin black-text-white-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// =========================
+// Header
+// =========================
+
+body {
+  margin: 0;
+}
+
+// =========================
+// Header
+// =========================
+
+nav {
+  // @include white-text-black-bg();
+  border: 2px dashed orange;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: fit-content;
+
+  a {
+    display: flex;
+  }
+
+  .logo {
+    background-size: initial
+  }
+
+  a {
+    @include white-text-black-bg();
+
+    div {
+      margin: 10px;
+      font-size: large;
+    }
+
+  }
+
+}
+
+// =========================
+// Index
+// =========================
+
+.index {
+  border: 2px dashed purple;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F5b%2F48%2F735b48222af5644b22d10684f34f634e.jpg&f=1&nofb=1");
+  background-size: cover;
+  background-attachment: scroll;
+
+  .cheese {
+    // border: 2px dashed red;
+    text-align: center;
+    margin: 15px;
+    background: rgb(255, 255, 221);
+    border-radius: 6px;
+      a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Kurale', serif;
+      }
+      a:hover {
+        text-decoration: dashed underline;
+        text-decoration-thickness: 1.2px;
+      }
+
+    .cheese-image {
+      // border: 5px solid rgb(211, 211, 211);
+      // border-top: 2px dashed grey;
+      width: 350px;
+      height: 350px;
+      padding: 0 15px 15px 15px;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+  }
+
+}

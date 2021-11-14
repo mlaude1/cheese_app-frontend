@@ -27,8 +27,11 @@ const Index = (props) => {
   const loaded = () => {
     return props.cheese.map((cheese) => (
       <div key={cheese._id} className="cheese">
-        <Link to={`/cheese/${cheese._id}`}><h1>{cheese.name}</h1></Link>
-        <img src={cheese.image} alt={cheese.name}/>
+        <Link to={`/cheese/${cheese._id}`}><h1>{cheese.name}</h1>
+        <div className="cheese-image">
+          <img src={cheese.image} alt={cheese.name}/>
+        </div>
+        </Link>
       </div>
     ));
   };
@@ -63,7 +66,10 @@ const Index = (props) => {
         />
         <input type="submit" value="Create Cheese" />
       </form>
-      {props.cheese ? loaded() : loading()}
+      <div className="index">
+        {props.cheese ? loaded() : loading()}
+      </div>
+      
     </section>
     
   )
