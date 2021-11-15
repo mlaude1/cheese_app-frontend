@@ -76,11 +76,11 @@ const Show = (props) => {
           <img src={oneCheese.image} alt={oneCheese.name}/>
           <div className="item-details-right">
             <h1>{oneCheese.name}</h1>
-            <h2><ion-icon name="flag"></ion-icon>Country of Origin: {oneCheese.countryOfOrigin}</h2>
+            <h2><ion-icon id="flag" name="flag"></ion-icon>Country of Origin: {oneCheese.countryOfOrigin}</h2>
           </div>
         </div>
         {form}
-        <button id="delete" onClick={removeCheese}>DELETE</button>
+        <button id="delete" onClick={removeCheese}><ion-icon id="trash" name="trash-outline"></ion-icon>DELETE THIS</button>
       </div> 
     );
   } else {

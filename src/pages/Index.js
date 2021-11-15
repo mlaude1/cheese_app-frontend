@@ -42,6 +42,9 @@ const Index = (props) => {
   
   return (
     <section>
+      <div className="index">
+      {props.cheese ? loaded() : loading()}
+      
       <form onSubmit={handleSubmit}>
         <fieldset>
         <legend>Create Form</legend>
@@ -70,14 +73,10 @@ const Index = (props) => {
           onChange={handleChange}
           />
         </fieldset>
-        
-        
         <input type="submit" value="Create" />
       </form>
-      <div className="index">
-        {props.cheese ? loaded() : loading()}
-      </div>
       
+      </div>
     </section>
     
   )
