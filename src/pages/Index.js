@@ -43,28 +43,36 @@ const Index = (props) => {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <input
-        type="text"
-        value={newForm.name}
-        name="name"
-        placeholder="Name"
-        onChange={handleChange}
-        />
-        <input
-        type="text"
-        value={newForm.countryOfOrigin}
-        name="countryOfOrigin"
-        placeholder="Country of Origin"
-        onChange={handleChange}
-        />
-        <input
-        type="text"
-        value={newForm.image}
-        name="image"
-        placeholder="Image URL"
-        onChange={handleChange}
-        />
-        <input type="submit" value="Create Cheese" />
+        <fieldset>
+        <legend>Create Form</legend>
+          <label>Name</label>
+          <input
+          type="text"
+          value={newForm.name}
+          name="name"
+          placeholder="Name"
+          onChange={handleChange}
+          />
+          <label>Country of Origin</label>
+          <input
+          type="text"
+          value={newForm.countryOfOrigin}
+          name="countryOfOrigin"
+          placeholder="Country of Origin"
+          onChange={handleChange}
+          />
+          <label>Image URL</label>
+          <input
+          type="text"
+          value={newForm.image}
+          name="image"
+          placeholder="Image URL"
+          onChange={handleChange}
+          />
+        </fieldset>
+        
+        
+        <input type="submit" value="Create" />
       </form>
       <div className="index">
         {props.cheese ? loaded() : loading()}

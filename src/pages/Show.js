@@ -39,6 +39,9 @@ const Show = (props) => {
 
     const form = (
       <form onSubmit={handleSubmit}>
+        <fieldset>
+        <legend>Update Form</legend>
+          <label>Name</label>
           <input
             type="text"
             value={editForm.name}
@@ -46,13 +49,15 @@ const Show = (props) => {
             placeholder="Name"
             onChange={handleChange}
           />
+          <label>Country of Origin</label>
           <input
             type="text"
             value={editForm.countryOfOrigin}
             name="countryOfOrigin"
-            placeholder="Country of Origin"
+            placeholder="Country"
             onChange={handleChange}
           />
+          <label>Image URL</label>
           <input
             type="text"
             value={editForm.image}
@@ -60,19 +65,22 @@ const Show = (props) => {
             placeholder="Image URL"
             onChange={handleChange}
           />
+        </fieldset>
           <input type="submit" value="Update" />
-        </form>
+      </form>
     );
       
     return (
       <div className="oneCheese">
-        <h1>{oneCheese.name}</h1>
-        <h2>{oneCheese.countryOfOrigin}</h2>
-        <img src={oneCheese.image} alt={oneCheese.name} />
+        <div className="item-details">
+          <img src={oneCheese.image} alt={oneCheese.name}/>
+          <div className="item-details-right">
+            <h1>{oneCheese.name}</h1>
+            <h2><ion-icon name="flag"></ion-icon>Country of Origin: {oneCheese.countryOfOrigin}</h2>
+          </div>
+        </div>
         {form}
-        <button id="delete" onClick={removeCheese}>
-          DELETE
-        </button>
+        <button id="delete" onClick={removeCheese}>DELETE</button>
       </div> 
     );
   } else {
